@@ -1,0 +1,26 @@
+{
+  "_comment": "Transport layer: DataBento API download parameters and batch job settings. Change these when adjusting date ranges, encoding formats, or polling behaviour.",
+  "download": {
+    "schema":          "ohlcv-1m",
+    "start":           "2015-01-01",
+    "end":             "2025-12-31T23:59",
+    "encoding":        "dbn",
+    "compression":     "zstd",
+    "split_duration":  "month",
+    "poll_interval_s": 10,
+    "output_dir":      "./data/dbn"
+  },
+  "transport": {
+    "batch": {
+      "warn_threshold":      0.75,
+      "hard_threshold":      0.85,
+      "gc_between_batches":  true
+    }
+  },
+  "provenance": {
+    "data_provider":  "databento",
+    "timezone":       "UTC",
+    "is_adjusted":    true,
+    "timestamp_unit": "ns"
+  }
+}

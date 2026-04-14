@@ -1,0 +1,31 @@
+{
+  "_comment": "Data transformation layer: dtype optimisation, Parquet storage settings, and memory gatekeeper thresholds. These change per-project, not per-instrument.",
+  "transform": {
+    "dtypes": {
+      "price_cols":      ["open", "high", "low", "close"],
+      "volume_col":      "volume",
+      "timestamp_col":   "ts_event",
+      "price_dtype":     "float32",
+      "volume_dtype":    "uint32",
+      "timestamp_dtype": "int64"
+    },
+    "parquet": {
+      "compression":    "snappy",
+      "row_group_size": 500000,
+      "output_dir":     "./data/parquet",
+      "fallback_csv":   false
+    },
+    "memory": {
+      "bytes_per_value":    4,
+      "n_columns":          5,
+      "safety_multiplier":  1.5
+    }
+  },
+  "compute": {
+    "row_group_size":  "256MB",
+    "sorted_by":       "timestamp",
+    "is_sorted":       true,
+    "price_dtype":     "float32",
+    "timestamp_dtype": "int64"
+  }
+}

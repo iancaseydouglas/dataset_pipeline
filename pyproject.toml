@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dataset_pipeline"
+version = "0.1.0"
+description = "Config-driven DataBento → Parquet pipeline for VectorBT PRO grid sweeps"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "databento",
+    "pyarrow",
+    "pandas",
+    "psutil",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[project.scripts]
+# Allows: uv run dataset-pipeline [args]
+# In addition to: uv run -m dataset_pipeline [args]
+dataset-pipeline = "dataset_pipeline.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+# Tells hatch/uv where the package source lives
+packages = ["src/dataset_pipeline"]

@@ -1,0 +1,9 @@
+{
+  "_comment": "Top-level pipeline orchestrator. Lists all config sources in merge order (later entries override earlier ones). To run NQ instead of ES, change the instrument path. To compose variations, add partial files to config_dirs.",
+  "configs": [
+    "./configs/transform.json",
+    "./configs/transport.json",
+    "./configs/instruments/ES.json"
+  ],
+  "config_dirs": []
+}

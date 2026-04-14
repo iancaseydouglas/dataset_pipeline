@@ -1,0 +1,14 @@
+{
+  "_comment": "Instrument identity for E-mini S&P 500 continuous front-month contract.",
+  "instrument": {
+    "symbol":         "ES",
+    "contract":       "ES.c.0",
+    "stype_in":       "continuous",
+    "dataset":        "GLBX.MDP3",
+    "tick_size":      0.25,
+    "point_value":    50.0,
+    "exchange":       "CME",
+    "asset_class":    "Futures",
+    "contract_month": ""
+  }
+}
