@@ -31,7 +31,7 @@ All pipeline behaviour — instruments, date ranges, storage settings, memory th
 ### With uv (recommended)
 
 ```bash
-git clone https://github.com/yourorg/dataset_pipeline.git
+gh repo clone iancaseydouglas/dataset_pipeline
 cd dataset_pipeline
 uv sync                  # creates .venv, installs all deps + the package
 uv run -m dataset_pipeline --dry-run
